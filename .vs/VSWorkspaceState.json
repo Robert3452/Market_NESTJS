@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\database",
+    "\\src\\database\\migrations"
+  ],
+  "SelectedNode": "\\src\\database\\database.module.ts",
+  "PreviewInSolutionExplorer": false
+}

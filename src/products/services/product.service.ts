@@ -30,11 +30,14 @@ export class ProductService {
     if (!createdProduct) {
       throw new BadRequestException(`there was an error`);
     }
-    return createdProduct;
+    return this.productRepo.save(createdProduct);
   }
 
   async update(id: number, changes: UpdateProductDto) {
     const product = await this.productRepo.findOne(id);
+    if (!product) {
+      throw new NotFoundException(`Product ${id} not found`);
+    }
     this.productRepo.merge(product, changes);
     return this.productRepo.save(product);
   }
